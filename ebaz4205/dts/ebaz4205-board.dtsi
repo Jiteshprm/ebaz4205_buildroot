@@ -8,6 +8,7 @@
                 ethernet0 = &gem0;
                 serial0 = &uart1;
                 mmc0 = &sdhci0;
+                i2c0 = &i2c0;
         };
 
         memory@0 {
@@ -107,4 +108,11 @@
                         };
                 };
         };
+};
+
+&i2c0 {
+	status = "okay";
+	clock-frequency = <400000>;
+	scl-gpios = <&gpio0 26 0>;
+	sda-gpios = <&gpio0 27 0>;
 };
